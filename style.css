@@ -1,7 +1,7 @@
 body { 
-    background-image:url(assets/images.jpeg) ;
-    background-repeat: no-repeat;
-    background-size: cover;
+	background-image: url(assets/images.jpeg);
+	background-repeat: no-repeat;
+	background-size: cover; 
 	padding: 0; 
 	margin: 0; 
 	font-family: verdana; 
@@ -17,19 +17,18 @@ body {
 } 
 
 h1 { 
-	color: rgb(219, 3, 3); 
-	text-align: center;
-    font-size: 70PX; 
+	color: rgb(10, 238, 10); 
+	text-align: center; 
 } 
 
 .digit { 
 	font-size: 150px; 
-	color: #0b0c0c; 
+	color: #fff; 
 } 
 
 .txt { 
 	font-size: 30px; 
-	color: #101111; 
+	color: #fffcd6; 
 } 
 
 #buttons { 
