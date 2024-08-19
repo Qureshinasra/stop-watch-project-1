@@ -1,43 +1,164 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-	
-<head> 
-	<meta charset="UTF-8"> 
-	<meta http-equiv="X-UA-Compatible"
-		content="IE=edge"> 
-	<meta name="viewport"
-		content="width=device-width, initial-scale=1.0"> 
-	<title>Design Stopwatch using HTML CSS and JavaScript</title> 
-	<link rel="stylesheet" href="style.css"> 
-</head> 
-
-<body> 
-	<div class="container"> 
-		<h1> Stop Watch</h1> 
-		<div id="time"> 
-			<span class="digit" id="hr"> 
-				00</span> 
-			<span class="txt">Hr</span> 
-			<span class="digit" id="min"> 
-				00</span> 
-			<span class="txt">Min</span> 
-			<span class="digit" id="sec"> 
-				00</span> 
-			<span class="txt">Sec</span> 
-			<span class="digit" id="count"> 
-				00</span> 
-		</div> 
-		<div id="buttons"> 
-			<button class="btn" id="start"> 
-				Start</button> 
-			<button class="btn" id="stop"> 
-				Stop</button> 
-			<button class="btn" id="reset"> 
-				Reset</button> 
-		</div> 
-	</div> 
-
-	<script src="script.js"></script> 
-</body> 
-	
-</html>
+<!DOCTYPE html>  
+<html lang= "en">  
+<head>  
+    <meta charset="UTF-8">   
+    <meta http-equiv="X-UA-Compatible"   
+          content="IE=edge">   
+    <meta name="viewport"   
+          content="width=device-width, initial-scale=1.0">   
+    <title>HTML Stopwatch</title>  
+    <style>  
+        body {  
+            font-family: 'Courier New', Courier, monospace;  
+            background-color: khaki;  
+            margin: 150px;  
+        }  
+        .stopwatch-container {  
+            background-color: black;  
+            width: 800px;  
+            height: 300px;  
+            text-align: center;  
+        }  
+        p {  
+            padding: 15px;  
+            color: plum;  
+            font-size: 24px;  
+            font-weight: 600;  
+        }  
+        .digits {  
+            font-size: 45px;  
+            color: khaki;  
+        }  
+        .text {  
+            font-size: 20px;  
+            color: plum;  
+            font-weight: bold;  
+        }  
+        #buttons {  
+            margin-top: 35px;  
+        }  
+        .button-1, .button-2, .button-3 {  
+            margin: 9px 20px 19px 9px;  
+            padding: 7px 4px 7px 4px;  
+            height: 46px;  
+            width: 85px;  
+            border: 0;  
+            border-radius: 45px;  
+            font-size: 18px;  
+            color: khaki;  
+            cursor: pointer;  
+            transition: 0.5s;  
+            font-weight: 600;  
+            font-family:Verdana, Tahoma, sans-serif;  
+        }  
+        .button-1:hover, .button-2:hover, .button-3:hover{  
+            color: brown;  
+        }  
+        #start {  
+            background-color: plum;  
+        }  
+        #stop {  
+            background-color: darkorchid;  
+        }  
+        #reset {  
+            background-color: purple;  
+        }  
+        #start:hover, #stop:hover, #reset:hover  {  
+            background-color: white;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <div class= "stopwatch-container">  
+        <p> Stopwatch </p>  
+        <div id= "time">  
+            <span class= "digits" id= "hour">00</span>  
+            <span class= "text">Hr</span>  
+            <span class= "digits" id= "minute">  
+              00</span>  
+            <span class= "text">Min</span>  
+            <span class= "digits" id= "second">00</span>  
+            <span class= "text">Sec</span>  
+            <span class= "digits" id= "count">00</span>  
+            <span class= "text">Millisec</span>  
+        </div>  
+        <div id= "buttons">  
+            <button class= "button-1" id= "start">  
+              Start </button>  
+            <button class= "button-2" id= "stop">  
+              Stop </button>  
+            <button class= "button-3" id= "reset">  
+              Reset </button>  
+        </div>  
+    </div>  
+    <script>  
+        let startButton = document.getElementById('start');  
+        let stopButton = document.getElementById('stop');  
+        let resetButton = document.getElementById('reset');  
+            
+        let hour = 0;  
+        let minute = 0;  
+        let second = 0;  
+        let count = 0;  
+            
+        startButton.addEventListener('click', function () {  
+            timer = true;  
+            stopWatch();  
+        });  
+        stopButton.addEventListener('click', function () {  
+            timer = false;  
+        });   
+        resetButton.addEventListener('click', function () {  
+            timer = false;  
+            hour = 0;  
+            minute = 0;  
+            second = 0;  
+            count = 0;  
+            document.getElementById('hour').innerHTML = "00";  
+            document.getElementById('minute').innerHTML = "00";  
+            document.getElementById('second').innerHTML = "00";  
+            document.getElementById('count').innerHTML = "00";  
+        });  
+        function stopWatch() {  
+            if (timer) {  
+                count++;  
+                if (count == 100) {  
+                    second++;  
+                    count = 0;  
+                }  
+                if (second == 60) {  
+                    minute++;  
+                    second = 0;  
+                }  
+                if (minute == 60) {  
+                    hour++;  
+                    minute = 0;  
+                    second = 0;  
+                }  
+                let hourhourString = hour;  
+                let minuteminuteString = minute;  
+                let secondsecondString = second;  
+                let countcountString = count;  
+                if (hour < 10) {  
+                    hourString = "0" + hourString;  
+                }  
+                if (minute < 10) {  
+                    minuteString = "0" + minuteString;  
+                }  
+                if (second < 10) {  
+                    secondString = "0" + secondString;  
+                }  
+            
+                if (count < 10) {  
+                    countString = "0" + countString;  
+                }  
+                document.getElementById('hour').innerHTML = hourString;  
+                document.getElementById('minute').innerHTML = minuteString;  
+                document.getElementById('second').innerHTML = secondString;  
+                document.getElementById('count').innerHTML = countString;  
+                setTimeout(stopWatch, 10);  
+            }  
+        }  
+    </script>  
+</body>  
+</html
