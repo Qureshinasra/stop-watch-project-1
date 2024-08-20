@@ -1,30 +1,65 @@
-.stopwatch {
-	text-align: center;
-	margin-top: 50px;
-  }
-  
-  .display {
-	font-size: 36px;
-	font-weight: bold;
-	margin-bottom: 20px;
-  }
-  
-  button {
-	margin: 5px;
-	padding: 10px 20px;
-	font-size: 16px;
-	border: none;
-	border-radius: 5px;
-	background-color: #4CAF50;
-	color: white;
-	cursor: pointer;
-  }
-  
-  button:hover {
-	background-color: #45a049;
-  }
-  
-  button:active {
-	background-color: #3e8e41;
-  }
-  
+body {
+    font-family: Times New Roman;
+	background-color: rgb(240, 203, 241);
+}
+.align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+	background-image: url(assets/a.png);
+    /* background-color: thistle; */
+    height: 350px;
+    width: 500px;
+    text-align: center;
+}
+h4 {
+	color: purple;
+	padding: 20PX;
+    font-size: 30px;
+    font-weight: bold;
+}
+.digits {
+    font-size: 70px;
+    color: white;
+}
+.text {
+    font-size: 20px;
+    color: hotpink;
+    font-weight: bold;
+}
+#buttons {
+    margin-top: 35px;
+}
+.btn1,.btn2,.btn3 {
+    width: 90px;
+    height: 50px;
+    padding: 8px 5px 8px 2px;
+    margin: 10px 25px 20px 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.7s;
+    color: white;
+    font-weight: 550;
+    border: 0;
+    font-family: Times new Roman;
+}
+.btn1:hover,.btn2:hover,.btn3:hover {
+    color: indigo;
+}
+#start {
+    background-color: indigo;
+}
+#stop {
+    background-color: mediumpurple;
+}
+#reset {
+    background-color: plum;
+}
+#start:hover,#stop:hover,
+#reset:hover {
+    background-color: white;
+}
